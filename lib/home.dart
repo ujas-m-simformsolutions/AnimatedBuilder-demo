@@ -3,23 +3,7 @@ import 'package:animated_builder_demo/animations/rotate_animation_demo.dart';
 import 'package:animated_builder_demo/animations/size_animation_demo.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  @override
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
-  late AnimationController animation;
-
-  @override
-  void initState() {
-    super.initState();
-    animation = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 2),
-    )..forward();
-  }
-
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
