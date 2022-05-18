@@ -29,6 +29,7 @@ class _SizeAnimationDemoState extends State<SizeAnimationDemo>
     return Scaffold(
       appBar: AppBar(
         title: Text('Size Animation'),
+        backgroundColor: Theme.of(context).colorScheme.secondary,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -42,10 +43,11 @@ class _SizeAnimationDemoState extends State<SizeAnimationDemo>
                 } else if (controller.value == 1) {
                   controller.reverse();
                 }
-                return Container(
-                  color: Colors.red,
-                  height: 100 * controller.value,
+                return Image.asset(
+                  'assets/logo.png',
                   width: 100 * controller.value,
+                  height: 100 * controller.value,
+                  scale: 0.6,
                 );
               },
             ),
