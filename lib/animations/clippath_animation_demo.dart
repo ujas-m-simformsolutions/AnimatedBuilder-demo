@@ -29,6 +29,7 @@ class _FadeAnimationDemoState extends State<FadeAnimationDemo>
     return Scaffold(
       appBar: AppBar(
         title: Text('Animation with ClipPath'),
+        backgroundColor: Theme.of(context).colorScheme.secondary,
       ),
       body: Center(
         child: Row(
@@ -81,26 +82,6 @@ class LightningClipper extends CustomClipper<Path> {
       ..close();
   }
 
-  /// Return false always because we always clip the same area.
-  @override
-  bool shouldReclip(CustomClipper oldClipper) => false;
-}
-
-class ClipPathDemo extends CustomClipper<Path> {
-  const ClipPathDemo();
-
-  @override
-  getClip(Size size) {
-    double height = size.height;
-    double width = size.width;
-    return Path()
-      ..moveTo(width / 3, height * 0.5)
-      ..lineTo(width / 5, 0)
-      ..lineTo(-width / 2, height * 0.5)
-      ..close();
-  }
-
-  /// Return false always because we always clip the same area.
   @override
   bool shouldReclip(CustomClipper oldClipper) => false;
 }

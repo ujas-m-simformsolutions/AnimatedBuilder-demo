@@ -9,32 +9,30 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Animated Builder Demo'),
+        backgroundColor: Theme.of(context).colorScheme.secondary,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => SizeAnimationDemo(),
-                ),
+              onPressed: () => _navigate(context, SizeAnimationDemo()),
+              style: ElevatedButton.styleFrom(
+                primary: Theme.of(context).colorScheme.secondary,
               ),
               child: Text('Size  animation'),
             ),
             ElevatedButton(
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => RotateAnimationDemo(),
-                ),
+              onPressed: () => _navigate(context, RotateAnimationDemo()),
+              style: ElevatedButton.styleFrom(
+                primary: Theme.of(context).colorScheme.secondary,
               ),
               child: Text('Rotate animation'),
             ),
             ElevatedButton(
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => FadeAnimationDemo(),
-                ),
+              onPressed: () => _navigate(context, FadeAnimationDemo()),
+              style: ElevatedButton.styleFrom(
+                primary: Theme.of(context).colorScheme.secondary,
               ),
               child: Text('clipPath animation'),
             ),
@@ -42,6 +40,12 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  void _navigate(BuildContext context, Widget screen) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (_) => screen),
     );
   }
 }

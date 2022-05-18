@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
+
+import 'package:flutter/material.dart';
 
 class RotateAnimationDemo extends StatefulWidget {
   @override
@@ -30,6 +31,7 @@ class _RotateAnimationDemoState extends State<RotateAnimationDemo>
     return Scaffold(
       appBar: AppBar(
         title: Text('Rotate Animation'),
+        backgroundColor: Theme.of(context).colorScheme.secondary,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -37,10 +39,11 @@ class _RotateAnimationDemoState extends State<RotateAnimationDemo>
           Center(
             child: AnimatedBuilder(
               animation: animation,
-              child: Container(
-                color: Colors.red,
-                height: 100,
+              child: Image.asset(
+                'assets/logo.png',
                 width: 100,
+                height: 100,
+                scale: 0.6,
               ),
               builder: (context, child) {
                 return Transform.rotate(
